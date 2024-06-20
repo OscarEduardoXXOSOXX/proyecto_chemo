@@ -1,0 +1,190 @@
+/* Estilos del nuevo diseño */
+body {
+    background-image: url('2fon.png'); /* Cambia 'tu_imagen_de_fondo.jpg' por la ruta de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif; /* Establece la fuente para todo el documento */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    height: 80vh; /* Usa toda la altura de la ventana */
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 2em; /* Simplifica el padding */
+    background-color: rgba(0, 0, 0, 0.596);
+    border-radius: 25px;
+    transition: transform 0.4s ease-in-out;
+    margin: 2em auto; /* Centra el contenedor en la pantalla */
+    max-width: 400px;
+}
+
+
+.form:hover {
+    transform: scale(1.05);
+    border: 1px solid black;
+}
+
+#heading {
+    text-align: center;
+    margin: 2em;
+    color: black;
+    text-shadow: 2px 2px 5px rgb(230, 224, 224); /* Añade una sombra */
+    font-size: 60px;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    border-radius: 25px;
+    padding: 0.6em;
+    color: white;
+    background-color: white;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.input-icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: black;
+}
+
+.input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: black;
+}
+
+.form .btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5em;
+    gap: 0.5em;
+}
+.button1, .button2, .button3 {
+    all: unset;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0.6em 2em;
+    border: mediumspringgreen solid 0.15em;
+    border-radius: 0.25em;
+    color: mediumspringgreen;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border 300ms, color 300ms;
+    user-select: none;
+}
+
+.button1 p, .button2 p, .button3 p {
+    z-index: 1;
+}
+
+.button1:hover, .button2:hover, .button3:hover {
+    color: #212121;
+}
+
+.button1:active, .button2:active, .button3:active {
+    border-color: teal;
+}
+
+.button1::after, .button1::before,
+.button2::after, .button2::before,
+.button3::after, .button3::before {
+    content: "";
+    position: absolute;
+    width: 9em;
+    aspect-ratio: 1;
+    background: mediumspringgreen;
+    opacity: 50%;
+    border-radius: 50%;
+    transition: transform 500ms, background 300ms;
+}
+
+.button1::before, .button2::before, .button3::before {
+    left: 0;
+    transform: translateX(-8em);
+}
+
+.button1::after, .button2::after, .button3::after {
+    right: 0;
+    transform: translateX(8em);
+}
+
+.button1:hover:before, .button2:hover:before, .button3:hover:before {
+    transform: translateX(-1em);
+}
+
+.button1:hover:after, .button2:hover:after, .button3:hover:after {
+    transform: translateX(1em);
+}
+
+.button1:active:before, .button1:active:after,
+.button2:active:before, .button2:active:after,
+.button3:active:before, .button3:active:after {
+    background: teal;
+}
+
+
+.button3:hover {
+    background-color: red;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+    color: black;
+}
+
+.password-input input[type="password"] {
+    width: calc(100% - 30px);
+    padding-right: 30px;
+}
+.shadow__btn {
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    margin: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+    margin-bottom: 20px; /* Agrega un margen inferior de 20px al botón */
+  }
+  
+  .shadow__btn {
+    background: rgb(0,140,255);
+    box-shadow: 0 0 25px rgb(0,140,255);
+  }
+  
+  .shadow__btn:hover {
+    box-shadow: 0 0 5px rgb(0,140,255),
+                0 0 25px rgb(0,140,255),
+                0 0 50px rgb(0,140,255),
+                0 0 100px rgb(0,140,255);
+  }

@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'MiFuente'; /* Nombre de la fuente */
+    src: url('fonts/fuente.ttf') format('truetype'); /* Ruta relativa a la carpeta de fuentes */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('fon.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column; /* Alinea el contenido verticalmente */
+    justify-content: flex-start; /* Alinea el contenido al inicio */
+    align-items: center; /* Alinea el contenido al centro horizontalmente */
+}
+
+h1 {
+    font-family: 'MiFuente', Arial, sans-serif; /* Aplica la fuente personalizada */
+    font-size: 50px;
+    text-shadow: 2px 2px 5px rgb(230, 224, 224); /* Añade una sombra */
+    margin-top: 50px; /* Mueve el título hacia abajo */
+}
+
+.container {
+    text-align: center; /* Centra el texto */
+    background-color: transparent; /* Elimina el color de fondo del contenedor */
+    align-content: center;
+    margin-bottom: 10px; /* Agrega un margen abajo para separarlo del borde */
+}
+
+.image-container {
+    margin-right: 10px; /* Mueve los elementos hacia la derecha */
+    margin-left: auto;
+}
+
+.image {
+    max-width: 500px; /* Define el ancho máximo de la imagen */
+    height: auto; /* Ajusta la altura automáticamente */
+}
+
+.btn-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 10px;
+    margin-left: auto; /* Mueve los botones a la derecha */
+    margin-right: 60px; /* Ajusta el margen derecho */
+}
+
+.button {
+    position: relative;
+    width: 160px;
+    height: 40px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    padding: 12px;
+    gap: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -4px;
+    top: -1px;
+    margin: auto;
+    width: 128px;
+    height: 48px;
+    border-radius: 10px;
+    background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+    z-index: -10;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+    transform: translate3d(0, 0, 0) scale(0.95);
+    filter: blur(20px);
+}
+
+.button:hover::after {
+    filter: blur(30px);
+}
+
+.button:hover::before {
+    transform: rotate(-180deg);
+}
+
+.button:active::before {
+    scale: 0.7;
+}

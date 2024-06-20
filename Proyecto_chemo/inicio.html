@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Tienda de Suplementos</title>
+    <link rel="stylesheet" href="inicio.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="Logo.png" alt="Logo de la Marca">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#promociones">Promociones</a></li>
+                    <li><a href="#carrito">Carrito</a></li>
+                    <li><a href="#" onclick="confirmarCerrarSesion()">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="buscar">
+            <h2>Buscar Productos</h2>
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Buscar productos...">
+                <button onclick="buscarProductos()">Buscar</button>
+            </div>
+        </section>
+
+        <section id="filtros">
+            <h2>Filtrar Productos</h2>
+            <div class="filtros">
+                <select id="categoria">
+                    <option value="todos">Todas las Categorías</option>
+                    <option value="proteina">Proteínas</option>
+                    <option value="vitaminas">Vitaminas y Minerales</option>
+                    <option value="aminoacidos">Aminoácidos</option>
+                    <option value="rendimiento">Suplementos para el Rendimiento</option>
+                    <option value="salud">Suplementos para la Salud General</option>
+                    <option value="perdida_peso">Pérdida de Peso</option>
+                    <option value="ganancia_masa">Ganancia de Masa Muscular</option>
+                    <option value="otros">Otros Suplementos</option>
+                </select>
+                <select id="precio">
+                    <option value="todos">Todos los Precios</option>
+                    <option value="bajo">Menos de $20</option>
+                    <option value="medio">$20 - $50</option>
+                    <option value="alto">Más de $50</option>
+                </select>
+                <button onclick="filtrarProductos()">Filtrar</button>
+            </div>
+        </section>
+
+        <section id="productos" class="productos">
+            <h2>Nuestros Productos</h2>
+            <div class="producto-lista" id="producto-lista">
+                <!-- Ejemplo de Producto -->
+                <div class="producto proteina">
+                    <img src="fon.png" alt="Proteína Whey">
+                    <h3>Proteína Whey</h3>
+                    <p>$45.00</p>
+                    <button class="button" onclick="agregarAlCarrito('Proteína Whey', 45.00, 'producto1.jpg')">Agregar al Carrito</button>
+                </div>
+                <div class="producto vitaminas">
+                    <img src="fon.png" alt="Multivitamínico">
+                    <h3>Multivitamínico Completo</h3>
+                    <p>$30.00</p>
+                    <button class="button" onclick="agregarAlCarrito('Multivitamínico Completo', 30.00, 'producto2.jpg')">Agregar al Carrito</button>
+                </div>
+                <div class="producto proteina">
+                    <img src="producto3.jpg" alt="Proteína Vegana">
+                    <h3>Proteína Vegana</h3>
+                    <p>$50.00</p>
+                    <button class="button" onclick="agregarAlCarrito('Proteína Vegana', 50.00, 'producto3.jpg')">Agregar al Carrito</button>
+                </div>
+                <div class="producto vitaminas">
+                    <img src="producto4.jpg" alt="Vitamina C 1000mg">
+                    <h3>Vitamina C 1000mg</h3>
+                    <p>$20.00</p>
+                    <button class="button" onclick="agregarAlCarrito('Vitamina C 1000mg', 20.00, 'producto4.jpg')">Agregar al Carrito</button>
+                </div>
+                <div class="producto proteina">
+                    <img src="producto5.jpg" alt="Caseína Micelar">
+                    <h3>Caseína Micelar</h3>
+                    <p>$55.00</p>
+                    <button class="button" onclick="agregarAlCarrito('Caseína Micelar', 55.00, 'producto5.jpg')">Agregar al Carrito</button>
+                </div>
+                <div class="producto vitaminas">
+                    <img src="producto6.jpg" alt="Complejo B">
+                    <h3>Complejo B</h3>
+                    <p>$25.00</p>
+                    <button class="button" onclick="agregarAlCarrito('Complejo B', 25.00, 'producto6.jpg')">Agregar al Carrito</button>
+                </div>
+                <!-- Más productos aquí -->
+            </div>
+        </section>
+
+        <section id="promociones" class="promociones">
+            <h2>Promociones</h2>
+            <div class="promocion-lista">
+                <!-- Ejemplo de Promoción -->
+                <div class="promocion">
+                    <img src="promo1.jpg" alt="Promoción 1">
+                    <h3>2x1 en Multivitamínicos</h3>
+                    <p>Compra uno y lleva otro gratis.</p>
+                    <button class="button" onclick="aprovecharPromocion('Multivitamínico Completo', 30.00, 'producto2.jpg')">Aprovechar Promoción</button>
+                </div>
+                <!-- Más promociones aquí -->
+            </div>
+        </section>
+
+        <section id="carrito" class="carrito">
+            <h2>Carrito de Compras</h2>
+            <div class="carrito-lista" id="carrito-lista">
+                <!-- Productos en el carrito se mostrarán aquí -->
+            </div>
+            <div class="carrito-total" id="carrito-total">
+                <h3>Total: $0.00</h3>
+            </div>
+            <button class="button">Finalizar Compra</button>
+        </section>
+
+        <section id="comentarios" class="comentarios">
+            <h2>Comentarios y Reseñas</h2>
+            <div class="comentarios-lista" id="comentarios-lista">
+                <!-- Ejemplo de Comentario -->
+                <div class="comentario">
+                    <h3>Usuario1</h3>
+                    <p>Me encantó este producto, lo recomiendo 100%.</p>
+                </div>
+                <!-- Más comentarios aquí -->
+            </div>
+            <form id="comentario-form" onsubmit="enviarComentario(event)">
+                <h3>Deja tu Comentario</h3>
+                <textarea id="comentario-texto" placeholder="Escribe tu comentario aquí..." rows="4"></textarea>
+                <button type="submit" class="button">Enviar Comentario</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="notificaciones" class="notificaciones">
+        <p>Nuevas promociones disponibles!</p>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
